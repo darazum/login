@@ -30,6 +30,9 @@ $usersById = array_combine(
     <div class="post">
         <span class="user">Сообщеие от <b><?=strip_tags($usersById[$post['user_id']]['name']);?></b> отправлено <?=$post['datetime'];?></span>
         <div class="message"><?=$post['message'];?></div>
+        <? if (file_exists('../../images/' . $post['id'] . '.png')):?>
+            <img src="image.php/?id=<?=$post['id'];?>"></img>
+        <? endif; ?>
     </div>
 <? endforeach;?>
 
